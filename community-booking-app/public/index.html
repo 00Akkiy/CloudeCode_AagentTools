@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公民館スクール 予約システム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>公民館スクール 予約システム</h1>
+      <nav>
+        <button class="nav-btn active" data-view="classes">クラス一覧</button>
+        <button class="nav-btn" data-view="myreservations">予約確認</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- クラス一覧 -->
+    <section id="view-classes" class="view active">
+      <h2>開講クラス一覧</h2>
+      <div id="class-list" class="card-grid"></div>
+    </section>
+
+    <!-- 予約確認 -->
+    <section id="view-myreservations" class="view">
+      <h2>予約確認・キャンセル</h2>
+      <div class="search-box">
+        <label>登録メールアドレスで検索</label>
+        <div class="input-row">
+          <input type="email" id="search-email" placeholder="example@email.com">
+          <button id="search-btn" class="btn-primary">検索</button>
+        </div>
+      </div>
+      <div id="my-reservations-list"></div>
+    </section>
+  </main>
+
+  <!-- 予約モーダル -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-class-info" class="modal-class-info"></div>
+      <form id="booking-form">
+        <div class="form-group">
+          <label>お名前 <span class="required">*</span></label>
+          <input type="text" id="form-name" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label>電話番号 <span class="required">*</span></label>
+          <input type="tel" id="form-phone" placeholder="090-0000-0000" required>
+        </div>
+        <div class="form-group">
+          <label>メールアドレス <span class="required">*</span></label>
+          <input type="email" id="form-email" placeholder="example@email.com" required>
+        </div>
+        <p id="form-error" class="error-msg hidden"></p>
+        <button type="submit" class="btn-primary btn-full" id="submit-btn">予約する</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- トースト通知 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

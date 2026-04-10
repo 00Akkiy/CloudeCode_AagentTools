@@ -1,0 +1,65 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "name": "書道教室",
+      "instructor": "田中 花子",
+      "capacity": 10,
+      "schedule": "毎週火曜日 10:00〜12:00",
+      "fee": 1500,
+      "description": "初心者から上級者まで楽しめる書道クラスです。",
+      "room": "第1会議室"
+    },
+    {
+      "id": 2,
+      "name": "ヨガ教室",
+      "instructor": "山田 美香",
+      "capacity": 15,
+      "schedule": "毎週木曜日 19:00〜20:30",
+      "fee": 1200,
+      "description": "心身のリフレッシュに最適なヨガクラスです。",
+      "room": "多目的ホール"
+    },
+    {
+      "id": 3,
+      "name": "料理教室",
+      "instructor": "鈴木 一郎",
+      "capacity": 8,
+      "schedule": "毎週土曜日 10:00〜13:00",
+      "fee": 2500,
+      "description": "季節の食材を使った家庭料理を学びましょう。",
+      "room": "調理実習室"
+    },
+    {
+      "id": 4,
+      "name": "英会話教室",
+      "instructor": "Smith John",
+      "capacity": 12,
+      "schedule": "毎週水曜日 18:00〜19:30",
+      "fee": 2000,
+      "description": "日常会話から旅行英語まで楽しく学べます。",
+      "room": "第2会議室"
+    },
+    {
+      "id": 5,
+      "name": "絵画教室",
+      "instructor": "佐藤 絵里",
+      "capacity": 10,
+      "schedule": "毎週金曜日 13:00〜15:00",
+      "fee": 1800,
+      "description": "水彩・油彩・パステルなど様々な技法を習得できます。",
+      "room": "美術室"
+    },
+    {
+      "id": 6,
+      "name": "パソコン教室",
+      "instructor": "高橋 健太",
+      "capacity": 10,
+      "schedule": "毎週月曜日 14:00〜16:00",
+      "fee": 1500,
+      "description": "WordやExcelの基本操作から応用まで丁寧に教えます。",
+      "room": "パソコン室"
+    }
+  ],
+  "reservations": []
+}
