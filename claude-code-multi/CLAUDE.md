@@ -167,3 +167,20 @@ UPDATE contacts SET updated_at = CURRENT_DATE, ... WHERE id = 'NA-XXX';
 - 人脈の追加・更新・削除は **必ずPostgreSQLのcontactsテーブル** に対して行う
 - `人脈管理/人脈台帳.csv` は読み取り参照のみ・書き込み禁止（移行済みのため）
 - CRM移管時は `SELECT * FROM contacts` でCSV出力する
+
+---
+
+## Google Calendar MCP
+
+### 状態
+- **接続済み**（claude.ai Google Calendar MCP）
+- 認証不要・そのまま使える
+
+### できること
+- 予定の確認（今日・明日・今週など）
+- 予定の追加
+- 予定の更新・削除
+
+### 使い方
+カレンダー操作はMCPツールを通じて直接実行する。
+ユーザーから「〇〇さんと会う予定入れて」と言われたら確認なしで登録する。
