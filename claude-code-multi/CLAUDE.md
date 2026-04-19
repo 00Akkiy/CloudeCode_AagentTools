@@ -120,3 +120,45 @@ Noah Axice本体の建設へ
 
 *Noah Axice claude-code 自動起動設定*
 *更新日：2026-04-08*
+
+---
+
+## データベース（Noah Axice専用PostgreSQL）
+
+### 接続方法
+```bash
+docker exec noah-axice-db psql -U noah_axice -d noah_axice -c "SQL文"
+```
+
+### テーブル一覧
+| テーブル | 内容 |
+|---|---|
+| `contacts` | 人脈台帳（メイン） |
+| `skill_tags` | スキルタグマスタ |
+| `assign_history` | アサイン履歴 |
+| `projects` | 案件台帳 |
+
+### よく使うSQL例
+```sql
+-- 人脈検索
+SELECT id, name, skill_tags, relationship, last_contact_date FROM contacts;
+
+-- スキルタグで絞り込み
+SELECT name, skill_detail FROM contacts WHERE skill_tags LIKE '%T001%';
+
+-- 最終コンタクトが古い順
+SELECT name, last_contact_date, next_action FROM contacts ORDER BY last_contact_date ASC;
+
+-- 人脈追加
+INSERT INTO contacts (id, name, ...) VALUES (...);
+
+-- 人脈更新
+UPDATE contacts SET updated_at = CURRENT_DATE, ... WHERE id = 'NA-XXX';
+```
+
+### 人脈登録ルール
+- IDは `NA-XXX`形式（最大IDを確認してから採番）
+- 最大ID確認: `SELECT MAX(id) FROM contacts;`
+- 登録後は `contacts`テーブルに即書き込む
+- CSVファイル（人脈台帳.csv）は参照用として残す
+
