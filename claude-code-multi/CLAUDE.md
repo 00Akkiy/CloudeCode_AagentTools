@@ -162,3 +162,8 @@ UPDATE contacts SET updated_at = CURRENT_DATE, ... WHERE id = 'NA-XXX';
 - 登録後は `contacts`テーブルに即書き込む
 - CSVファイル（人脈台帳.csv）は参照用として残す
 
+
+### 重要：人脈データの正はDBのみ
+- 人脈の追加・更新・削除は **必ずPostgreSQLのcontactsテーブル** に対して行う
+- `人脈管理/人脈台帳.csv` は読み取り参照のみ・書き込み禁止（移行済みのため）
+- CRM移管時は `SELECT * FROM contacts` でCSV出力する
